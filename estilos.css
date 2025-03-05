@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
+/* Colores */
+:root{
+    --green: #1bac0e;
+    --darkgreen: #0e5a07;
+    --light: #fdfbfb;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Lato;
+    background-color: var(--light);
+}
+/* Contendeor general */
+.contenedor{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+/*        -------------->>>> Header */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: 1em 2em;
+    color: var(--light);
+    border-radius: 25px;
+    border-bottom: 1px inset var(--light);
+    background-color: rgba(255, 255, 255, 0.063);
+
+}
+/* Contenedor de icon y nombre */
+.header-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5em;
+}
+
+/* Nav */
+header nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    list-style: none;
+    font-size: 1.3em;
+}
+header nav ul li{
+    cursor: pointer;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: var(--light);
+    transition: all 3s;
+}
+header nav ul li a:hover{
+    text-decoration: underline;
+}
+
+
+/*          --------------->> Main */
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+/* --Imágen de fondo */
+main .fondo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -10;
+}
+/* Titulo */
+main > .inicio > .title > h1{
+    color: var(--light);
+    font-size: 5em;
+}
+main > .inicio > .title > h2{
+    color: var(--light);
+    font-size: 3em;
+}
+/* Imágen */
+.player{
+    width: 250px;
+}
+/* Inscripcion */
+.info{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding: 1em .5em;
+    border: 1px solid var(--light);
+    border-radius: 15px;
+    color: var(--light);
+    transition: all .7s;
+}
+.info:hover{
+    background-color: var(--light);
+    color: var(--darkgreen);
+}
+.info > h2{
+    font-size: 1.7em;
+}
+.info > p{
+    width: 90%;
+    font-size: 1.1em;
+    text-wrap: balance;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Boton primario */
+.btn_inscrip, .btn_aceptar, .jugar{
+    padding: .5em 1.5em;
+    font-size: 1.1em;
+    background-color: var(--light);
+    color: var(--darkgreen);
+    border-radius: 15px;
+    border: 1px inset var(--darkgreen);
+    cursor: pointer;
+}
+.btn_inscrip:hover , .btn_aceptar:hover, .jugar:hover{
+    background-color: var(--darkgreen);
+    color: var(--light);
+}
+
+
+/* -------- Modal -------- */
+.modal{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s .7s;
+    --transform: translateY(-100vh);
+    --transition: transform .5s;
+}  
+.modal_container{
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    margin: auto;
+    padding: 3em;
+    background-color: var(--light);
+    border-radius: 15px;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+.modal_container > h3{
+    color: var(--darkgreen);
+    font-size: 1.5em;
+}
+.modal_container> input{
+    padding: .5em 2em;
+    background-color: var(--light);
+    border: 1px solid var(--darkgreen);
+    color: var(--darkgreen);
+    border-radius: 15px;
+}
+/* Mostrar modal */
+.modal_show{
+    opacity: 1;
+    pointer-events: unset;
+    z-index: 15;
+    transition: opacity .5s;
+    --transform: translateY(0);
+    --transition: transform .5s .3s;
+}
+/* Footer */
+footer{
+    width: 100%;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    justify-content: space-around;
+    
+    padding: 1em 2em;
+    color: var(--light);
+    border-radius: 25px;
+    border-top: 1px inset var(--light);
+    background-color: rgba(255, 255, 255, 0.063);
+}
+.footer-icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: .5em;
+}
+.footer-icons >img{
+    width: 24px;
+    cursor: pointer;
+    color: var(--light);
+}
+
+
+/* Páginas */
+/* Liga */
+.main-liga{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    
+}
+.liga{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.liga > h2{
+    color: var(--light);
+    font-size: 3em;
+    transform: translateY(-10px);
+}
+.liga-torneo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 5em;
+}
+.teams, .posiciones{
+    background-color: var(--light);
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+    border-radius: 15px;
+    padding: .5em 2em;
+    min-height: 100%;
+}
+.teams-grid{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    
+}
+.teams-grid > p{
+    border: 1px inset var(--green);
+    padding: .3em 2em;
+    border-radius: 15px;
+    background-color: transparent;
+}
+.posiciones-tabla{
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: auto repeat(4, 1fr);
+    place-items: center;
+    gap: .2em;
+    background-color: var(--green);
+}
+.posiciones-tabla > h4 , .posiciones-tabla > p{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: var(--light);
+    padding: .2em 1em;
+}
+.posiciones-tabla > p{
+    border-radius: 5px;
+    border: 1px inset var(--light);
+
+}
+/* Administrador */
+.main-login{
+    display: flex;
+    justify-content: center;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px inset var(--light);
+    border-radius: 15px;
+    padding: 1em 2em;
+    color: var(--light);
+}
+.login > h2{
+    font-size: 2.5em;
+}
+.login > .section-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+.section-login > input, button{
+    border-radius: 5px;
+    border: none;
+    padding: .5em 1.5em;
+}
+.section-login > button{
+    margin-top: 1em;
+}
+.section-login > button:hover{
+    background-color: var(--green);
+    color: var(--light);
+}
+
+
