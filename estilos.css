@@ -87,6 +87,7 @@ main > .inicio > .title > h1{
     color: var(--light);
     font-size: 5em;
 }
+
 main > .inicio > .title > h2{
     color: var(--light);
     font-size: 3em;
