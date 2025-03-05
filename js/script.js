@@ -24,7 +24,7 @@ aceptar.addEventListener('click', ()=>{
         const jugar = document.querySelector('.jugar');
         jugar.addEventListener('click', ()=>{
             modal.classList.remove('modal_show');
-            location.href="../pages/jugar.html";
+            // location.href="../pages/jugar.html";
         });
         
     }
